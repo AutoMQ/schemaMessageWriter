@@ -1,0 +1,51 @@
+{
+    "type": "record",
+    "name": "Event",
+    "fields": [
+      {
+        "name": "tenant_id",
+        "type": "string"
+      },
+      {
+        "name": "event_name",
+        "type": "string"
+      },
+      {
+        "name": "event_time",
+        "type": "long"
+      },
+      {
+        "name": "event_id",
+        "type": "string"
+      },
+      {
+        "name": "session_id",
+        "type": "string"
+      },
+      {
+        "name": "scribe_client_type",
+        "type": "string"
+      },
+      {
+        "name": "scribe_api_version",
+        "type": "string"
+      },
+      {
+        "name": "channel",
+        "type": "string"
+      },
+      {
+        "name": "event_type",
+        "type": "string"
+      },
+      {
+        "name": "custom_params_map",
+        "type": {
+          "type": "map",
+          "values": "string"
+        }
+      }
+    ]
+  }
+  
+  
