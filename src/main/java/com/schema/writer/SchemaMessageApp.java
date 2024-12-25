@@ -43,7 +43,7 @@ public class SchemaMessageApp implements Callable<Integer> {
     @Override
     public Integer call() throws Exception {
         try {
-            // 读取schema内容
+            // read schema from file if it ends with .json
             String schemaJson;
             if (schema.endsWith(".json")) {
                 schemaJson = new String(java.nio.file.Files.readAllBytes(
@@ -52,7 +52,7 @@ public class SchemaMessageApp implements Callable<Integer> {
                 schemaJson = schema;
             }
 
-            // 创建配置
+            // create configuration object
             SchemaConfig config = SchemaConfig.builder()
                     .bootstrapServers(bootstrapServers)
                     .schemaRegistry(schemaRegistry)
@@ -60,7 +60,7 @@ public class SchemaMessageApp implements Callable<Integer> {
                     .schemaJson(schemaJson)
                     .build();
 
-            // 创建写入器并发送消息
+            // create writer and send messages
             try (SchemaMessageWriter writer = new SchemaMessageWriter(config)) {
                 System.out.printf("Starting to send %d messages to topic '%s'%n", 
                         messageCount, topic);
