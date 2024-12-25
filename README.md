@@ -1,6 +1,7 @@
 # Schema Message Writer
 
-> A Kafka utility tool for generating and sending messages based on Avro schemas.
+> A demo utility tool for AutoMQ, designed to generate and send messages based on Avro schemas. This tool helps demonstrate AutoMQ's Kafka-compatible features by providing an easy way to produce test messages that conform to specified Avro schemas.
+
 
 ## Features
 
@@ -12,7 +13,7 @@
 ## Installation
 
 ```bash
-git clone https://github.com/yourusername/schema-message-writer.git
+git clone https://github.com/AutoMQ/schema-message-writer.git
 cd schema-message-writer
 mvn clean install
 ```
@@ -34,7 +35,7 @@ java -jar target/schema-message-writer-1.0-SNAPSHOT-jar-with-dependencies.jar \
 
 | Option | Description | Default |
 |--------|-------------|---------|
-| -b, --bootstrap-servers | Kafka bootstrap servers | localhost:9092 |
+| -b, --bootstrap-servers | AutoMQ bootstrap servers | localhost:9092 |
 | -r, --schema-registry | Schema Registry URL | Required |
 | -t, --topic | Kafka topic name | Required |
 | -s, --schema | Schema JSON file/string | Required |
